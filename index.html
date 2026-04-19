@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Calculadora impuesto remesas 2026 · Cuánto pagas y cómo evitarlo | Remesa1%</title>
+<meta name="description" content="Calcula cuánto te cobra el impuesto federal del 1% a las remesas desde EE.UU. en 2026. Compara métodos de envío y ahorra el impuesto con transferencias digitales." />
+<meta name="keywords" content="impuesto remesas 2026, calcular impuesto 1% remesas, enviar dinero sin impuesto, remesas México, remesas Guatemala, remesas El Salvador, one big beautiful bill remesas" />
+<link rel="canonical" href="https://remesa1pct.com/" />
+
+<!-- Open Graph -->
+<meta property="og:title" content="Calculadora impuesto remesas 2026 — ahorra el 1%" />
+<meta property="og:description" content="Desde enero 2026 hay un impuesto federal del 1% sobre remesas en efectivo. Calcula cuánto te afecta y cómo evitarlo." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://remesa1pct.com/" />
+<meta property="og:locale" content="es_US" />
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Calculadora impuesto remesas 2026" />
+<meta name="twitter:description" content="Calcula cuánto pagas del nuevo impuesto del 1% a las remesas y cómo evitarlo." />
+
+<!-- Favicon con emoji -->
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💸</text></svg>" />
+
+<!-- Fuentes con carácter -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=Inter+Tight:wght@400;500;600&display=swap" rel="stylesheet" />
+
+<!-- Tailwind via CDN para MVP -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      fontFamily: {
+        display: ['Fraunces', 'Georgia', 'serif'],
+        sans: ['Inter Tight', 'system-ui', 'sans-serif']
+      },
+      colors: {
+        ink: '#141311',
+        paper: '#F5F0E6',
+        clay: '#C8553D',
+        moss: '#5A6E3A',
+        dusk: '#2B2A26'
+      }
+    }
+  }
+}
+</script>
+
+<style>
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Inter Tight', system-ui, sans-serif;
+  background: #F5F0E6;
+  color: #141311;
+  font-feature-settings: "ss01", "cv11";
+}
+.display { font-family: 'Fraunces', Georgia, serif; font-variation-settings: "opsz" 144; letter-spacing: -0.02em; }
+.numero-grande { font-family: 'Fraunces', Georgia, serif; font-variation-settings: "opsz" 144; font-weight: 700; letter-spacing: -0.04em; }
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+input[type="number"] { -moz-appearance: textfield; }
+.grain { background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' /%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.06'/%3E%3C/svg%3E"); }
+
+.metodo-card { transition: all 0.2s ease; }
+.metodo-card:hover { transform: translateY(-2px); }
+.metodo-card.activo { background: #141311; color: #F5F0E6; }
+
+details > summary { list-style: none; cursor: pointer; }
+details > summary::-webkit-details-marker { display: none; }
+details[open] .chevron { transform: rotate(180deg); }
+.chevron { transition: transform 0.2s; }
+
+.hero-linea { background: linear-gradient(90deg, transparent 0%, #141311 20%, #141311 80%, transparent 100%); height: 1px; }
+
+@keyframes fadeUp { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+.fade-up { animation: fadeUp 0.6s ease-out both; }
+.fade-up-2 { animation: fadeUp 0.6s ease-out 0.1s both; }
+.fade-up-3 { animation: fadeUp 0.6s ease-out 0.2s both; }
+</style>
+</head>
+
+<body class="grain">
+
+<!-- Nav -->
+<nav class="max-w-6xl mx-auto px-6 py-6 flex items-center justify-between">
+  <a href="/" class="flex items-center gap-2">
+    <div class="w-8 h-8 bg-ink text-paper rounded-full flex items-center justify-center text-sm font-semibold">1%</div>
+    <span class="display text-xl font-semibold">Remesa1%</span>
+  </a>
+  <div class="hidden md:flex items-center gap-8 text-sm">
+    <a href="#calculadora" class="hover:underline underline-offset-4">Calculadora</a>
+    <a href="#comparar" class="hover:underline underline-offset-4">Comparar métodos</a>
+    <a href="#faq" class="hover:underline underline-offset-4">Preguntas</a>
+    <a href="/guia.html" class="hover:underline underline-offset-4">Guía completa</a>
+  </div>
+</nav>
+
+<!-- Hero -->
+<header class="max-w-6xl mx-auto px-6 pt-12 md:pt-24 pb-16">
+  <div class="grid md:grid-cols-12 gap-8 items-end">
+    <div class="md:col-span-8 fade-up">
+      <div class="inline-flex items-center gap-2 bg-ink text-paper px-3 py-1 rounded-full text-xs mb-8">
+        <span class="w-1.5 h-1.5 bg-clay rounded-full animate-pulse"></span>
+        Vigente desde el 1 de enero de 2026
+      </div>
+      <h1 class="display text-5xl md:text-7xl lg:text-8xl leading-[0.95] font-semibold">
+        ¿Cuánto te cuesta <span class="italic text-clay">realmente</span> enviar dinero a casa?
+      </h1>
+      <p class="mt-8 text-xl md:text-2xl max-w-2xl text-dusk/80" style="line-height: 1.4;">
+        La ley federal ahora cobra 1% sobre remesas en efectivo. Te mostramos cuánto te quita, y qué métodos digitales lo evitan por completo.
+      </p>
+      <div class="mt-12 flex flex-wrap gap-4 fade-up-2">
+        <a href="#calculadora" class="bg-ink text-paper px-6 py-3 rounded-full text-sm font-medium hover:bg-dusk transition">Calcular ahora →</a>
+        <a href="#como-funciona" class="border border-ink/30 px-6 py-3 rounded-full text-sm font-medium hover:bg-ink/5 transition">¿Cómo funciona el impuesto?</a>
+      </div>
+    </div>
+    <div class="md:col-span-4 fade-up-3">
+      <div class="bg-ink text-paper p-8 rounded-2xl">
+        <div class="text-xs uppercase tracking-widest text-paper/60 mb-2">Tú envías</div>
+        <div class="numero-grande text-5xl">$500</div>
+        <div class="h-px bg-paper/20 my-4"></div>
+        <div class="flex justify-between text-sm mb-2">
+          <span class="text-paper/60">En efectivo</span>
+          <span class="text-clay">−$5.00 tax</span>
+        </div>
+        <div class="flex justify-between text-sm">
+          <span class="text-paper/60">Digital</span>
+          <span class="text-moss font-medium">Sin impuesto</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="hero-linea max-w-6xl mx-auto"></div>
+
+<!-- Calculadora -->
+<section id="calculadora" class="max-w-6xl mx-auto px-6 py-20">
+  <div class="grid md:grid-cols-12 gap-12">
+
+    <div class="md:col-span-5">
+      <div class="text-xs uppercase tracking-widest text-dusk/60 mb-3">01 · Calculadora</div>
+      <h2 class="display text-4xl md:text-5xl font-semibold leading-tight">Calcula tu impuesto<br/>en 10 segundos.</h2>
+      <p class="mt-6 text-dusk/70">Ingresa el monto que envías cada vez y la frecuencia. Te mostramos cuánto pierdes al año si pagas en efectivo, y cuánto ahorras si cambias a digital.</p>
+
+      <div class="mt-8 bg-white/60 border border-ink/10 rounded-xl p-6">
+        <label class="text-sm font-medium mb-3 block">Monto que envías cada vez</label>
+        <div class="flex items-center gap-2 mb-6">
+          <span class="display text-3xl">$</span>
+          <input id="monto" type="number" value="500" min="1" class="flex-1 bg-transparent display text-4xl font-semibold border-b border-ink/30 focus:outline-none focus:border-ink pb-1" />
+          <span class="text-sm text-dusk/60">USD</span>
+        </div>
+
+        <label class="text-sm font-medium mb-3 block">Frecuencia</label>
+        <select id="frecuencia" class="w-full bg-white border border-ink/20 rounded-lg px-4 py-3 focus:outline-none focus:border-ink">
+          <option value="52">Cada semana</option>
+          <option value="26">Cada dos semanas</option>
+          <option value="12" selected>Cada mes</option>
+          <option value="4">Cada 3 meses</option>
+          <option value="1">Una vez al año</option>
+        </select>
+
+        <div class="mt-6">
+          <label class="text-sm font-medium mb-3 block">Método de pago actual</label>
+          <div class="grid grid-cols-2 gap-2">
+            <button data-metodo="efectivo" class="metodo-card activo border border-ink/20 rounded-lg p-3 text-left text-sm">
+              <div class="font-medium">Efectivo / giro</div>
+              <div class="text-xs opacity-70">Pagas el 1%</div>
+            </button>
+            <button data-metodo="digital" class="metodo-card border border-ink/20 rounded-lg p-3 text-left text-sm">
+              <div class="font-medium">Digital</div>
+              <div class="text-xs opacity-70">Sin impuesto</div>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="md:col-span-7">
+      <div class="bg-ink text-paper rounded-2xl p-8 md:p-12 h-full flex flex-col justify-between">
+        <div>
+          <div class="text-xs uppercase tracking-widest text-paper/60 mb-3">Tu pérdida por el impuesto</div>
+          <div class="flex items-baseline gap-3">
+            <span class="display text-3xl text-paper/60">$</span>
+            <span id="perdida-anual" class="numero-grande text-7xl md:text-8xl">60</span>
+            <span class="text-lg text-paper/60">/ al año</span>
+          </div>
+          <div class="mt-3 text-paper/60 text-sm">
+            Equivale a <span id="equivalencia" class="text-paper">1 mes de internet</span> que tu familia pierde.
+          </div>
+        </div>
+
+        <div class="mt-8 pt-8 border-t border-paper/15 space-y-4">
+          <div class="flex justify-between items-baseline">
+            <span class="text-paper/70 text-sm">Envías al año</span>
+            <span class="display text-2xl font-semibold"><span id="envio-anual">6,000</span></span>
+          </div>
+          <div class="flex justify-between items-baseline">
+            <span class="text-paper/70 text-sm">Impuesto 1% por envío</span>
+            <span class="display text-2xl font-semibold text-clay">−$<span id="tax-envio">5.00</span></span>
+          </div>
+          <div class="flex justify-between items-baseline">
+            <span class="text-paper/70 text-sm">En 5 años pierdes</span>
+            <span class="display text-2xl font-semibold"><span id="perdida-5anos">$300</span></span>
+          </div>
+        </div>
+
+        <div id="mensaje-ahorro" class="mt-8 p-4 bg-clay/20 border border-clay/30 rounded-lg text-sm hidden">
+          <div class="font-medium mb-1">Puedes ahorrar $<span id="ahorro">60</span> cada año</div>
+          <div class="text-paper/80">Cambiando a un método digital como Remitly, Wise o Xoom evitas el impuesto por completo.</div>
+          <a href="#comparar" class="inline-block mt-3 text-clay hover:underline font-medium">Ver comparación de métodos →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="hero-linea max-w-6xl mx-auto"></div>
+
+<!-- Cómo funciona -->
+<section id="como-funciona" class="max-w-6xl mx-auto px-6 py-20">
+  <div class="text-xs uppercase tracking-widest text-dusk/60 mb-3">02 · Contexto</div>
+  <h2 class="display text-4xl md:text-5xl font-semibold leading-tight max-w-3xl">Por qué existe este impuesto y a quién afecta.</h2>
+
+  <div class="grid md:grid-cols-3 gap-8 mt-12">
+    <div>
+      <div class="display text-5xl text-clay font-semibold">01</div>
+      <h3 class="display text-xl font-semibold mt-4">La ley</h3>
+      <p class="text-dusk/70 mt-3 text-sm leading-relaxed">La "One Big Beautiful Bill" firmada en julio de 2025 establece un impuesto federal del 1% sobre remesas enviadas desde EE.UU., vigente desde el 1 de enero de 2026.</p>
+    </div>
+    <div>
+      <div class="display text-5xl text-clay font-semibold">02</div>
+      <h3 class="display text-xl font-semibold mt-4">A quién afecta</h3>
+      <p class="text-dusk/70 mt-3 text-sm leading-relaxed">Aplica a envíos pagados en efectivo, money order o cheque de caja. No distingue estatus migratorio: afecta tanto a ciudadanos, residentes como a indocumentados que usen esos métodos.</p>
+    </div>
+    <div>
+      <div class="display text-5xl text-moss font-semibold">03</div>
+      <h3 class="display text-xl font-semibold mt-4">Cómo evitarlo</h3>
+      <p class="text-dusk/70 mt-3 text-sm leading-relaxed">El impuesto NO aplica a transferencias digitales. Si pagas con tarjeta, cuenta bancaria, Apple Pay o una app como Remitly/Wise, estás exento.</p>
+    </div>
+  </div>
+</section>
+
+<div class="hero-linea max-w-6xl mx-auto"></div>
+
+<!-- Comparar métodos -->
+<section id="comparar" class="max-w-6xl mx-auto px-6 py-20">
+  <div class="text-xs uppercase tracking-widest text-dusk/60 mb-3">03 · Comparación</div>
+  <h2 class="display text-4xl md:text-5xl font-semibold leading-tight max-w-3xl">Métodos digitales sin impuesto.</h2>
+  <p class="mt-4 text-dusk/70 max-w-2xl">Estas apps cumplen la regla del envío digital. Las ordenamos por rapidez y costo total. Las tarifas cambian; revisa antes de enviar.</p>
+
+  <div class="mt-12 overflow-x-auto">
+    <table class="w-full text-sm">
+      <thead class="text-xs uppercase tracking-widest text-dusk/60 border-b border-ink/20">
+        <tr>
+          <th class="text-left py-4 pr-4">Servicio</th>
+          <th class="text-left py-4 pr-4">Impuesto 1%</th>
+          <th class="text-left py-4 pr-4">Primer envío</th>
+          <th class="text-left py-4 pr-4">Tiempo</th>
+          <th class="text-left py-4 pr-4">Disponible en</th>
+          <th class="text-right py-4"></th>
+        </tr>
+      </thead>
+      <tbody class="divide-y divide-ink/10">
+        <tr class="hover:bg-white/40 transition">
+          <td class="py-5 pr-4">
+            <div class="font-medium">Remitly</div>
+            <div class="text-xs text-dusk/60">Transferencia bancaria o tarjeta</div>
+          </td>
+          <td class="py-5 pr-4"><span class="text-moss font-medium">Sin impuesto</span></td>
+          <td class="py-5 pr-4">$0 comisión</td>
+          <td class="py-5 pr-4">Minutos – 3 días</td>
+          <td class="py-5 pr-4">100+ países</td>
+          <td class="py-5 text-right">
+            <a href="https://remit.ly/placeholder-afiliado" target="_blank" rel="nofollow sponsored" class="text-ink underline underline-offset-4 hover:text-clay">Ir a Remitly →</a>
+          </td>
+        </tr>
+        <tr class="hover:bg-white/40 transition">
+          <td class="py-5 pr-4">
+            <div class="font-medium">Wise</div>
+            <div class="text-xs text-dusk/60">Tipo de cambio medio del mercado</div>
+          </td>
+          <td class="py-5 pr-4"><span class="text-moss font-medium">Sin impuesto</span></td>
+          <td class="py-5 pr-4">Variable</td>
+          <td class="py-5 pr-4">Minutos – 1 día</td>
+          <td class="py-5 pr-4">80+ países</td>
+          <td class="py-5 text-right">
+            <a href="https://wise.com/placeholder-afiliado" target="_blank" rel="nofollow sponsored" class="text-ink underline underline-offset-4 hover:text-clay">Ir a Wise →</a>
+          </td>
+        </tr>
+        <tr class="hover:bg-white/40 transition">
+          <td class="py-5 pr-4">
+            <div class="font-medium">Xoom (PayPal)</div>
+            <div class="text-xs text-dusk/60">De cuenta PayPal o bancaria</div>
+          </td>
+          <td class="py-5 pr-4"><span class="text-moss font-medium">Sin impuesto</span></td>
+          <td class="py-5 pr-4">Variable</td>
+          <td class="py-5 pr-4">Minutos</td>
+          <td class="py-5 pr-4">160+ países</td>
+          <td class="py-5 text-right">
+            <a href="https://xoom.com/placeholder-afiliado" target="_blank" rel="nofollow sponsored" class="text-ink underline underline-offset-4 hover:text-clay">Ir a Xoom →</a>
+          </td>
+        </tr>
+        <tr class="hover:bg-white/40 transition">
+          <td class="py-5 pr-4">
+            <div class="font-medium">WorldRemit</div>
+            <div class="text-xs text-dusk/60">Transferencia digital</div>
+          </td>
+          <td class="py-5 pr-4"><span class="text-moss font-medium">Sin impuesto</span></td>
+          <td class="py-5 pr-4">Variable</td>
+          <td class="py-5 pr-4">Minutos – 1 día</td>
+          <td class="py-5 pr-4">130+ países</td>
+          <td class="py-5 text-right">
+            <a href="https://worldremit.com/placeholder-afiliado" target="_blank" rel="nofollow sponsored" class="text-ink underline underline-offset-4 hover:text-clay">Ir a WorldRemit →</a>
+          </td>
+        </tr>
+        <tr class="bg-clay/5 border-t-2 border-clay/20">
+          <td class="py-5 pr-4">
+            <div class="font-medium">Western Union (efectivo)</div>
+            <div class="text-xs text-dusk/60">Si pagas en efectivo en tienda</div>
+          </td>
+          <td class="py-5 pr-4"><span class="text-clay font-medium">Paga el 1%</span></td>
+          <td class="py-5 pr-4">Comisión + tax</td>
+          <td class="py-5 pr-4">Minutos</td>
+          <td class="py-5 pr-4">200+ países</td>
+          <td class="py-5 text-right text-xs text-dusk/60">Paga digital para evitar</td>
+        </tr>
+        <tr class="bg-clay/5">
+          <td class="py-5 pr-4">
+            <div class="font-medium">MoneyGram (efectivo)</div>
+            <div class="text-xs text-dusk/60">Si pagas en efectivo en tienda</div>
+          </td>
+          <td class="py-5 pr-4"><span class="text-clay font-medium">Paga el 1%</span></td>
+          <td class="py-5 pr-4">Comisión + tax</td>
+          <td class="py-5 pr-4">Minutos</td>
+          <td class="py-5 pr-4">200+ países</td>
+          <td class="py-5 text-right text-xs text-dusk/60">Paga digital para evitar</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="mt-8 p-4 bg-ink/5 border border-ink/10 rounded-lg text-xs text-dusk/70">
+    <strong>Divulgación:</strong> algunos enlaces son de afiliados. Si contratas el servicio recibimos una comisión a ningún costo adicional para ti. Esto nos permite mantener la calculadora gratis.
+  </div>
+</section>
+
+<div class="hero-linea max-w-6xl mx-auto"></div>
+
+<!-- FAQ -->
+<section id="faq" class="max-w-4xl mx-auto px-6 py-20">
+  <div class="text-xs uppercase tracking-widest text-dusk/60 mb-3">04 · Preguntas</div>
+  <h2 class="display text-4xl md:text-5xl font-semibold leading-tight">Lo que todo el mundo pregunta.</h2>
+
+  <div class="mt-12 space-y-4">
+    <details class="bg-white/60 border border-ink/10 rounded-xl p-6">
+      <summary class="flex justify-between items-center font-medium">
+        ¿Cuánto es exactamente el impuesto?
+        <span class="chevron">▾</span>
+      </summary>
+      <p class="mt-4 text-dusk/70 text-sm leading-relaxed">Es el 1% del monto enviado. Si envías $500, pagas $5 de impuesto. Si envías $100, pagas $1. Es lineal sin mínimo.</p>
+    </details>
+
+    <details class="bg-white/60 border border-ink/10 rounded-xl p-6">
+      <summary class="flex justify-between items-center font-medium">
+        ¿Desde cuándo aplica?
+        <span class="chevron">▾</span>
+      </summary>
+      <p class="mt-4 text-dusk/70 text-sm leading-relaxed">Desde el 1 de enero de 2026, como parte de la ley federal "One Big Beautiful Bill" firmada en julio de 2025.</p>
+    </details>
+
+    <details class="bg-white/60 border border-ink/10 rounded-xl p-6">
+      <summary class="flex justify-between items-center font-medium">
+        ¿Afecta a indocumentados?
+        <span class="chevron">▾</span>
+      </summary>
+      <p class="mt-4 text-dusk/70 text-sm leading-relaxed">El impuesto no distingue estatus migratorio. Aplica a cualquier persona que envíe remesas en efectivo, giro postal o cheque de caja, sin importar si tiene SSN, ITIN o ningún documento.</p>
+    </details>
+
+    <details class="bg-white/60 border border-ink/10 rounded-xl p-6">
+      <summary class="flex justify-between items-center font-medium">
+        ¿Qué métodos digitales evitan el impuesto?
+        <span class="chevron">▾</span>
+      </summary>
+      <p class="mt-4 text-dusk/70 text-sm leading-relaxed">Transferencias hechas con tarjeta de débito o crédito emitida en EE.UU., débito bancario directo, Apple Pay, Google Pay, o directamente desde apps como Remitly, Wise, Xoom y WorldRemit cuando se pagan con método digital.</p>
+    </details>
+
+    <details class="bg-white/60 border border-ink/10 rounded-xl p-6">
+      <summary class="flex justify-between items-center font-medium">
+        ¿Y si envío con Zelle o Venmo?
+        <span class="chevron">▾</span>
+      </summary>
+      <p class="mt-4 text-dusk/70 text-sm leading-relaxed">Zelle y Venmo solo funcionan dentro de Estados Unidos, no sirven para enviar dinero al extranjero directamente. Para remesas internacionales debes usar un servicio como los comparados arriba.</p>
+    </details>
+
+    <details class="bg-white/60 border border-ink/10 rounded-xl p-6">
+      <summary class="flex justify-between items-center font-medium">
+        ¿Existe un monto mínimo exento?
+        <span class="chevron">▾</span>
+      </summary>
+      <p class="mt-4 text-dusk/70 text-sm leading-relaxed">No. El 1% aplica desde el primer dólar enviado en efectivo. No hay franquicia ni monto mínimo.</p>
+    </details>
+
+    <details class="bg-white/60 border border-ink/10 rounded-xl p-6">
+      <summary class="flex justify-between items-center font-medium">
+        ¿Esta calculadora guarda mis datos?
+        <span class="chevron">▾</span>
+      </summary>
+      <p class="mt-4 text-dusk/70 text-sm leading-relaxed">No. Todos los cálculos se hacen en tu navegador. No pedimos registro, no usamos cookies de rastreo, no guardamos nada en servidores. Puedes verificarlo viendo el código fuente.</p>
+    </details>
+  </div>
+</section>
+
+<!-- CTA final -->
+<section class="max-w-6xl mx-auto px-6 py-20">
+  <div class="bg-ink text-paper rounded-3xl p-12 md:p-16 text-center relative overflow-hidden">
+    <div class="relative z-10">
+      <h2 class="display text-4xl md:text-6xl font-semibold leading-tight max-w-3xl mx-auto">
+        Tu familia <span class="italic text-clay">merece</span> cada dólar.
+      </h2>
+      <p class="mt-6 text-paper/70 max-w-xl mx-auto">Comparte esta calculadora con familiares y amigos. Es gratis, no pide registro, y cada envío que cambien de efectivo a digital es dinero directo que llega a casa.</p>
+      <div class="mt-10 flex flex-wrap justify-center gap-3">
+        <button onclick="compartirWhatsApp()" class="bg-paper text-ink px-6 py-3 rounded-full text-sm font-medium hover:bg-paper/90 transition">Compartir por WhatsApp</button>
+        <button onclick="copiarLink()" class="border border-paper/30 text-paper px-6 py-3 rounded-full text-sm font-medium hover:bg-paper/10 transition"><span id="copy-txt">Copiar enlace</span></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="max-w-6xl mx-auto px-6 py-12 border-t border-ink/10">
+  <div class="grid md:grid-cols-4 gap-8 text-sm">
+    <div>
+      <div class="display text-lg font-semibold">Remesa1%</div>
+      <p class="mt-2 text-dusk/60 text-xs">Herramienta independiente para calcular el impuesto federal del 1% a remesas.</p>
+    </div>
+    <div>
+      <div class="font-medium mb-2">Calculadora</div>
+      <ul class="space-y-1 text-dusk/60">
+        <li><a href="#calculadora" class="hover:text-ink">Calcular tu impuesto</a></li>
+        <li><a href="#comparar" class="hover:text-ink">Comparar métodos</a></li>
+        <li><a href="/guia.html" class="hover:text-ink">Guía completa</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="font-medium mb-2">Información</div>
+      <ul class="space-y-1 text-dusk/60">
+        <li><a href="#faq" class="hover:text-ink">Preguntas frecuentes</a></li>
+        <li><a href="#como-funciona" class="hover:text-ink">Cómo funciona</a></li>
+        <li><a href="/metodologia.html" class="hover:text-ink">Metodología</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="font-medium mb-2">Legal</div>
+      <ul class="space-y-1 text-dusk/60">
+        <li><a href="/privacidad.html" class="hover:text-ink">Privacidad</a></li>
+        <li><a href="/terminos.html" class="hover:text-ink">Términos</a></li>
+        <li><a href="/contacto.html" class="hover:text-ink">Contacto</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="mt-8 pt-8 border-t border-ink/10 text-xs text-dusk/50 flex justify-between flex-wrap gap-4">
+    <div>© 2026 Remesa1%. Información general, no es asesoría fiscal.</div>
+    <div>Hecho con cariño para nuestras familias.</div>
+  </div>
+</footer>
+
+<script>
+const monto = document.getElementById('monto');
+const frecuencia = document.getElementById('frecuencia');
+const perdidaAnual = document.getElementById('perdida-anual');
+const envioAnual = document.getElementById('envio-anual');
+const taxEnvio = document.getElementById('tax-envio');
+const perdida5 = document.getElementById('perdida-5anos');
+const equivalencia = document.getElementById('equivalencia');
+const mensajeAhorro = document.getElementById('mensaje-ahorro');
+const ahorro = document.getElementById('ahorro');
+let metodoActual = 'efectivo';
+
+document.querySelectorAll('[data-metodo]').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('[data-metodo]').forEach(b => b.classList.remove('activo'));
+    btn.classList.add('activo');
+    metodoActual = btn.dataset.metodo;
+    calcular();
+  });
+});
+
+function equivalenciaTexto(monto) {
+  if (monto < 20) return "un par de cafés";
+  if (monto < 50) return "una semana de pan";
+  if (monto < 100) return "un mes de Netflix";
+  if (monto < 200) return "un mes de internet";
+  if (monto < 500) return "la luz de un mes";
+  if (monto < 1000) return "un mes de despensa";
+  if (monto < 2000) return "la renta de una recámara";
+  return "un mes de renta completa";
+}
+
+function formatoUSD(num) {
+  return num.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+}
+
+function calcular() {
+  const m = parseFloat(monto.value) || 0;
+  const f = parseInt(frecuencia.value);
+  const envAnual = m * f;
+  const taxPorEnvio = m * 0.01;
+  const perdAnual = envAnual * 0.01;
+  const perd5 = perdAnual * 5;
+
+  envioAnual.textContent = '$' + envAnual.toLocaleString('en-US');
+  taxEnvio.textContent = formatoUSD(taxPorEnvio);
+  perdida5.textContent = '$' + formatoUSD(perd5);
+  equivalencia.textContent = equivalenciaTexto(perdAnual);
+
+  if (metodoActual === 'efectivo') {
+    perdidaAnual.textContent = Math.round(perdAnual).toLocaleString('en-US');
+    mensajeAhorro.classList.remove('hidden');
+    ahorro.textContent = Math.round(perdAnual).toLocaleString('en-US');
+  } else {
+    perdidaAnual.textContent = '0';
+    mensajeAhorro.classList.add('hidden');
+  }
+}
+
+monto.addEventListener('input', calcular);
+frecuencia.addEventListener('change', calcular);
+calcular();
+
+function compartirWhatsApp() {
+  const texto = encodeURIComponent('Mira esta calculadora: desde enero 2026 cobran 1% de impuesto a las remesas en efectivo desde EE.UU. Calcula cuánto te cuesta y cómo evitarlo: https://remesa1pct.com');
+  window.open('https://wa.me/?text=' + texto, '_blank');
+}
+
+function copiarLink() {
+  navigator.clipboard.writeText('https://remesa1pct.com');
+  const t = document.getElementById('copy-txt');
+  const orig = t.textContent;
+  t.textContent = '✓ Copiado';
+  setTimeout(() => t.textContent = orig, 2000);
+}
+</script>
+
+</body>
+</html>
